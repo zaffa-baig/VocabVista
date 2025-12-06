@@ -1,4 +1,7 @@
-export default function Welcome() {
+import { useState } from "react";
+
+export default function Welcome(props) {
+	const { setName, name, handleCreateAccount } = props;
 	return (
 		<>
 			<section id="welcome">
@@ -26,8 +29,20 @@ export default function Welcome() {
 					Start your challenge today!
 				</h6>
 				<div>
-					<input type="text" placeholder="Enter the name..." />
-					<button>
+					<input
+						type="text"
+						placeholder="Enter the name..."
+						value={name}
+						onChange={(event) => {
+							setName(event.target.value);
+						}}
+					/>
+					<button
+						disabled={!name}
+						onClick={() => {
+							handleCreateAccount();
+						}}
+					>
 						<h6>Start &rarr;</h6>
 					</button>
 				</div>
