@@ -49,17 +49,15 @@ cd VocabVista
 Bash
 npm install
 
-# OR
+OR
 
 yarn install
-
-##
 
 Run the application locally:
 Bash
 npm start
 
-# OR
+OR
 
 yarn start
 
